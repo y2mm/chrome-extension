@@ -13,7 +13,7 @@ def run_python_script():
 
 @app.route('/random-generator', methods=['GET'])
 def random_generator():
-    return jsonify({'random': ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))})
+    return jsonify({'random': ''.join(random.choice(string.ascii_uppercase + string.digits + string.ascii_lowercase + "!.?,") for _ in range(10))})
 
 if __name__ == '__main__': #running flask server
     app.run(debug=True)
